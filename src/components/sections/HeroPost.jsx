@@ -3,7 +3,6 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useCompanion } from '../../context/CompanionContext';
 import { Link } from 'react-router-dom';
-import logoSrc from '../../assets/logo-petson.svg';
 import '../../styles/sections.css';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -65,7 +64,7 @@ const HeroPost = () => {
         </div>
       </div>
       <div className="hero-image-wrapper hero-fade">
-        <img src={logoSrc} alt="Logo PetSon Principal" className="hero-logo-float" />
+        <img src="/assets/img/logoPetson2.png" alt="Logo PetSon Principal" className="hero-logo-float" />
       </div>
     </section>
   );
