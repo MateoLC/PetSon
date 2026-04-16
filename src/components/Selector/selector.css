@@ -1,0 +1,122 @@
+/* src/components/Selector/selector.css */
+.selector-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  background: radial-gradient(circle at top, var(--petson-sky) 0%, var(--petson-white) 70%);
+}
+
+.selector-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.selector-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--petson-blue-deep);
+  margin-bottom: 0.5rem;
+}
+
+.selector-subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  color: var(--petson-gray);
+}
+
+.cards-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.companion-card {
+  flex: 1;
+  min-width: 300px;
+  max-width: 450px;
+  background: var(--petson-white);
+  border-radius: 24px;
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+  transform-style: preserve-3d;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  border: 1px solid var(--petson-border);
+  outline: none;
+}
+
+.companion-card:hover, .companion-card:focus-visible {
+  box-shadow: 0 20px 40px rgba(30, 133, 232, 0.15);
+  border-color: var(--accent);
+}
+
+.companion-card:focus-visible {
+  outline: 3px solid var(--accent);
+}
+
+.card-image-wrapper {
+  transform: translateZ(30px);
+  margin-bottom: 2rem;
+}
+
+.card-image {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.companion-card:hover .card-image {
+  transform: scale(1.05);
+}
+
+.card-content {
+  transform: translateZ(20px);
+}
+
+.card-name {
+  font-size: 2.5rem;
+  color: var(--petson-blue-deep);
+  margin-bottom: 0.25rem;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+}
+
+.card-description {
+  color: var(--petson-gray);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  min-height: 80px;
+}
+
+.card-cta {
+  width: 100%;
+  justify-content: center;
+}
+
+.companion-card:hover .card-cta .arrow {
+  transform: translateX(6px);
+}
+
+@media (max-width: 768px) {
+  .cards-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .companion-card {
+    width: 100%;
+  }
+}

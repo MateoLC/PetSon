@@ -1,0 +1,155 @@
+/* src/styles/adopciones.css */
+.adopciones-page {
+  padding-top: 80px; /* offset header */
+  background: var(--petson-cream);
+  min-height: 100vh;
+}
+
+.adopciones-hero {
+  padding: 6rem 2rem 4rem;
+  text-align: center;
+  background: radial-gradient(circle at top center, var(--petson-sky) 0%, transparent 80%);
+}
+
+.adopciones-hero h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: var(--petson-blue-deep);
+  margin-bottom: 1rem;
+}
+
+.adopciones-hero p {
+  font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+  color: var(--petson-gray);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.adopciones-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem 6rem;
+}
+
+.filters-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 4rem;
+}
+
+.chip {
+  padding: 0.6rem 1.5rem;
+  border-radius: 30px;
+  background: var(--petson-white);
+  border: 1px solid var(--petson-border);
+  color: var(--petson-gray);
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.chip:hover {
+  border-color: var(--petson-blue);
+  color: var(--petson-blue);
+}
+
+.chip.active {
+  background: var(--petson-blue);
+  color: var(--petson-white);
+  border-color: var(--petson-blue);
+}
+
+.adopciones-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.pet-card {
+  background: var(--petson-white);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid var(--petson-border);
+}
+
+.pet-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(30, 133, 232, 0.1);
+}
+
+.pet-img-wrapper {
+  height: 250px;
+  overflow: hidden;
+}
+
+.pet-img-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.pet-card:hover .pet-img-wrapper img {
+  transform: scale(1.05);
+}
+
+.pet-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.pet-info h2 {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--petson-ink);
+  margin-bottom: 0.5rem;
+}
+
+.pet-badges {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.badge {
+  font-size: 0.8rem;
+  padding: 0.25rem 0.6rem;
+  background: var(--petson-sky);
+  color: var(--petson-blue-deep);
+  border-radius: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.pet-info p {
+  color: var(--petson-gray);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  min-height: 3em;
+}
+
+.card-btn {
+  width: 100%;
+  justify-content: center;
+  margin-top: auto;
+}
+
+.adopciones-cta {
+  background: linear-gradient(135deg, var(--petson-blue) 0%, var(--petson-blue-deep) 100%);
+  padding: 4rem 2rem;
+  text-align: center;
+  color: var(--petson-white);
+}
+
+.adopciones-cta h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.adopciones-cta p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}

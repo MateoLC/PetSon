@@ -1,0 +1,16 @@
+:root {
+  --petson-blue: #1E85E8;        /* Azul principal del logo */
+  --petson-blue-deep: #0F5FB8;   /* Azul profundo para profundidad */
+  --petson-blue-soft: #5BA8F0;   /* Azul intermedio para hover/degradados */
+  --petson-sky: #BFE0FF;         /* Azul cielo para fondos suaves */
+  --petson-cream: #FFF9F2;       /* Crema cálido (contraste orgánico) */
+  --petson-ink: #0A1628;         /* Azul casi negro para texto */
+  --petson-warm: #F5A623;        /* Acento cálido (solo CTAs secundarios y corazones) */
+  --petson-white: #FFFFFF;
+  --petson-gray: #6B7280;        /* Texto secundario */
+  --petson-border: #E5E7EB;      /* Divisores */
+  
+  --font-display: 'Fraunces', serif;
+  --font-body: 'Manrope', sans-serif;
+  --font-accent: 'Caveat', cursive;
+}
