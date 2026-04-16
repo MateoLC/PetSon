@@ -139,4 +139,14 @@
   .header-nav {
     display: none; /* simple mobile hide for now */
   }
+  .main-header {
+    padding: 1rem 5%;
+  }
+  .footer-top {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .footer-col {
+    min-width: 100%;
+  }
 }
