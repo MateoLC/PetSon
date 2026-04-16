@@ -6,8 +6,6 @@ import { useCompanion } from '../../context/CompanionContext';
 import { ANIM } from '../../config/animation';
 import { ParticleBackground } from './ParticleBackground';
 
-import rawLogo from '../../assets/logo-petson.svg?raw';
-
 import './intro.css';
 
 const Intro = () => {
@@ -40,97 +38,47 @@ const Intro = () => {
       onUpdate: () => setProgress(Math.floor(progressObj.val))
     });
 
-    // Tagline text splitting (Fraunces italic)
     const taglineText = new SplitType('.intro-tagline', { types: 'words', tagName: 'span' });
     
-    tl.set('#part-1, #part-2, #part-3, #part-4 path, #part-5', { opacity: 0 });
-    tl.set('.intro-tagline .word', { opacity: 0, y: 10 });
-    tl.set('.intro-cta-wrapper', { opacity: 0, scale: 0.9 });
-    
-    // Setup initial states
-    tl.set('#part-1', { x: -100, y: -50, rotation: -15 });
-    tl.set('#part-2', { scale: 0.6, transformOrigin: 'center center' });
-    tl.set('#part-3', { y: 40 });
-    tl.set('#part-4 path', { y: 20, scale: 0.8, transformOrigin: 'bottom center' });
-    tl.set('#part-5', { scaleX: 0.9, transformOrigin: 'left center' });
+    tl.set('.intro-logo-image', { opacity: 0, scale: 0.9, y: 30 });
+    tl.set('.intro-tagline .word', { opacity: 0, y: 20 });
+    tl.set('.intro-cta-wrapper', { opacity: 0, y: 20 });
 
-    // Begin Animation Sequence
     const durationM = prefersReducedMotion ? 0.0 : 1;
 
-    // Frame 1 (1.0s): Cigüeña entra
-    tl.to('#part-1', {
-      x: 0, y: 0, rotation: 0,
+    tl.to('.intro-logo-image', {
       opacity: 1,
-      duration: 0.9 * durationM,
-      ease: ANIM.ease.smooth
-    }, 'start+=1.0');
-
-    // Frame 2 (1.0 - 1.6): Bultito
-    tl.to('#part-2', {
       scale: 1,
-      opacity: 1,
-      duration: 0.6 * durationM,
-      ease: ANIM.ease.bounce,
-      onComplete: () => {
-        if (!prefersReducedMotion) {
-          gsap.to('#part-2', {
-            rotation: 3,
-            yoyo: true,
-            repeat: -1,
-            duration: 1.5,
-            ease: 'sine.inOut'
-          });
-        }
-      }
-    }, 'start+=1.3');
+      y: 0,
+      duration: 1.2 * durationM,
+      ease: 'power3.out'
+    }, 'start+=0.5');
 
-    // Idle Ciguena (alas) - we can't easily animate wings without IDs, so we'll just float the whole bird slightly
     if (!prefersReducedMotion) {
-      gsap.to('#part-1', { y: -3, rotation: 2, yoyo: true, repeat: -1, duration: 2, ease: 'sine.inOut', delay: 2 });
+      gsap.to('.intro-logo-image', {
+        y: -12,
+        yoyo: true,
+        repeat: -1,
+        duration: 3,
+        ease: 'sine.inOut',
+        delay: 1.5
+      });
     }
 
-    // Frame 3 (1.5 - 2.1): Gato
-    tl.to('#part-3', {
-      y: 0,
-      opacity: 1,
-      duration: 0.6 * durationM,
-      ease: 'power2.out'
-    }, 'start+=1.5');
-
-    // Frame 4 (2.0 - 2.8): PetSon text
-    tl.to('#part-4 path', {
-      y: 0,
-      opacity: 1,
-      scale: 1,
-      duration: 0.8 * durationM,
-      stagger: ANIM.stagger.tight * durationM,
-      ease: ANIM.ease.elastic
-    }, 'start+=2.0');
-
-    // Frame 5 (2.7 - 3.2): Fundacion text
-    tl.to('#part-5', {
-      scaleX: 1,
-      opacity: 1,
-      duration: 0.5 * durationM,
-      ease: 'power2.out'
-    }, 'start+=2.7');
-
-    // Frame 6: Tagline
     tl.to('.intro-tagline .word', {
       y: 0,
       opacity: 1,
-      duration: 0.6 * durationM,
+      duration: 0.8 * durationM,
       stagger: ANIM.stagger.normal * durationM,
       ease: 'back.out(1.2)'
-    }, 'start+=3.3');
+    }, 'start+=1.2');
 
-    // Frame 7: CTA
     tl.to('.intro-cta-wrapper', {
       opacity: 1,
-      scale: 1,
+      y: 0,
       duration: 0.8 * durationM,
-      ease: 'back.out(1.5)'
-    }, 'start+=4.0');
+      ease: 'power2.out'
+    }, 'start+=2.0');
 
     return () => {
       tl.kill();
@@ -167,7 +115,7 @@ const Intro = () => {
 
       <div className="intro-content">
         <div className="intro-logo-wrapper">
-          <div className="svg-container" dangerouslySetInnerHTML={{ __html: rawLogo }} />
+          <img src="/assets/img/logoPetson2.png" alt="PetSon Logo" className="intro-logo-image" />
         </div>
 
         <h1 className="intro-tagline">

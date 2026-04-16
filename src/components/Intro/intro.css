@@ -56,14 +56,17 @@
 
 .intro-logo-wrapper {
   width: 100%;
-  max-width: 400px;
-  height: 250px;
-  margin-bottom: 2rem;
+  max-width: 450px;
+  height: auto;
+  margin-bottom: 3.5rem;
+  display: flex;
+  justify-content: center;
 }
-.intro-logo-wrapper svg {
+.intro-logo-image {
   width: 100%;
-  height: 100%;
-  overflow: visible;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 30px rgba(30, 133, 232, 0.15));
 }
 
 .intro-tagline {
