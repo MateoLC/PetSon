@@ -13,7 +13,6 @@ const Intro = () => {
   const introRef = useRef(null);
   const canvasRef = useRef(null);
   const tlRef = useRef(null);
-  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
     // Check prefers-reduced-motion
@@ -25,18 +24,8 @@ const Intro = () => {
       particles = new ParticleBackground(canvasRef.current);
     }
 
-    // GSAP Timeline setup
     const tl = gsap.timeline();
     tlRef.current = tl;
-
-    // Loading counter animation (mock)
-    const progressObj = { val: 0 };
-    tl.to(progressObj, {
-      val: 100,
-      duration: 1.0,
-      ease: 'power2.inOut',
-      onUpdate: () => setProgress(Math.floor(progressObj.val))
-    });
 
     const taglineText = new SplitType('.intro-tagline', { types: 'words', tagName: 'span' });
     
@@ -131,10 +120,6 @@ const Intro = () => {
             Saltar introducción →
           </button>
         </div>
-      </div>
-
-      <div className="intro-loading">
-        Cargando la experiencia {progress}%
       </div>
     </div>
   );
